@@ -9,6 +9,8 @@
     --heading: #2d3436;
     --white: #ffffff;
     --shadow: 0 12px 32px rgba(45, 52, 54, 0.08);
+    --accent: #4f9d69;
+    --accent-hover: #3f8757;
 }
 
 * {
@@ -122,6 +124,25 @@ img {
     color: var(--heading);
 }
 
+.hero-cta {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero-cta .btn-register {
+    width: auto;
+    padding: 16px 32px;
+    font-size: 1.05rem;
+}
+
+.hero-scroll-hint {
+    color: #6c757d;
+    font-size: 0.92rem;
+}
+
 .features-grid,
 .injury-grid,
 .instructors-grid,
@@ -160,19 +181,8 @@ img {
     color: var(--heading);
 }
 
-.feature-card,
-.program-module,
-.injury-card {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature-card:hover,
-.program-module:hover,
-.injury-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 36px rgba(45, 52, 54, 0.12);
-}
+/* .feature-card/.program-module/.injury-card — карточки не кликабельны и намеренно
+   не имеют cursor:pointer/hover-подъёма, чтобы не создавать ложное ожидание клика. */
 
 .program-list {
     display: grid;
@@ -180,7 +190,20 @@ img {
 }
 
 .program-module {
+    position: relative;
     border-left: 6px solid var(--blue);
+}
+
+.program-module-index {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--bg-soft);
+    color: var(--heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
 }
 
 .program-module:nth-child(2) { border-left-color: var(--mint); }
@@ -292,6 +315,19 @@ img {
 .pricing-card.featured {
     border: 2px solid var(--blue);
     transform: scale(1.02);
+    position: relative;
+}
+
+.featured-badge {
+    align-self: flex-start;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--blue);
+    color: var(--heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 
 .price {
@@ -374,6 +410,21 @@ img {
 .form-grid textarea {
     min-height: 140px;
     resize: vertical;
+}
+
+.form-trust {
+    margin: 0 0 28px;
+    color: #6c757d;
+    font-size: 0.92rem;
+}
+
+.btn-submit {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.btn-submit:hover {
+    background: var(--accent-hover);
 }
 
 .form-message {
